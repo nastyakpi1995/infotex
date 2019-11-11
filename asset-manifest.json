@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/infotex/static/css/main.5facb584.chunk.css",
+    "main.js": "/infotex/static/js/main.fcb982db.chunk.js",
+    "main.js.map": "/infotex/static/js/main.fcb982db.chunk.js.map",
+    "runtime-main.js": "/infotex/static/js/runtime-main.693ae6c2.js",
+    "runtime-main.js.map": "/infotex/static/js/runtime-main.693ae6c2.js.map",
+    "static/js/2.8d0f464d.chunk.js": "/infotex/static/js/2.8d0f464d.chunk.js",
+    "static/js/2.8d0f464d.chunk.js.map": "/infotex/static/js/2.8d0f464d.chunk.js.map",
+    "index.html": "/infotex/index.html",
+    "precache-manifest.5cc18ffc71d3578015c0ba98d18d4fae.js": "/infotex/precache-manifest.5cc18ffc71d3578015c0ba98d18d4fae.js",
+    "service-worker.js": "/infotex/service-worker.js",
+    "static/css/main.5facb584.chunk.css.map": "/infotex/static/css/main.5facb584.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.693ae6c2.js",
+    "static/js/2.8d0f464d.chunk.js",
+    "static/css/main.5facb584.chunk.css",
+    "static/js/main.fcb982db.chunk.js"
+  ]
+}
