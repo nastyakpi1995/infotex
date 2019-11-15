@@ -1,0 +1,69 @@
+.mc__VsScreen_box {
+  background: url(http://luxfon.com/large/201203/9589.jpg);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr 515px 1fr 150px;;
+}
+
+.mortal-Combat_logo-right {
+  height: 50px;
+
+}
+.mortal-Combat_logo-left {
+  height: 50px;
+  transform: rotateY(180deg);
+}
+
+.mc__VsScreen__img-left {
+  transform: rotate(180deg);
+}
+.mortal-Combat_logo-vs {
+  height: 15px;
+  background: none;
+}
+.mc__VsScreen_wall {
+  display: block;
+  width: 150px;
+  height: inherit;
+} 
+.mc__VsScreen_wall img {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  max-width: 100%;
+}
+.mortal-Combat_container {
+  display: flex;
+}
+.mortal-Combat_main {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  height: 100%;
+}
+.mortal-Combat_picture {
+  display: block;
+  width: 133px;
+  height: inherit;
+  position: relative;
+  top: 100px;
+}
+
+.mortal-Combat_picture img {
+  display: block;
+  object-fit: cover;
+  height: 250px;
+  max-width: 100%;
+}
+.mortal-Combat_main h2 {
+  margin-bottom: 140px;
+}
+
+.mortal-Combat_main img {
+  width: 230px;
+  height: 130px;
+}

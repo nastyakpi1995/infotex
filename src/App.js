@@ -1,26 +1,59 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
+import McVsScreen from './components/McVsScreen';
+import { startLoading } from './redux/store';
+import McChooseHero from './components/McChooseHero';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    this.props.loadTodos()
+  }
+
+  handleArrow = (event, img) => {
+    this.props.choosePersone(event.keyCode, img);
+    const { handleClose } =  this.props;
+     if (event.keyCode === 13) {
+        setTimeout(handleClose, 10000);
+     }
+  }
+
+  render() {
+    const { icons, isOpen } = this.props;
+
+    return (
+      <>
+        <div className="App">
+          <h2>Select your figghter</h2>
+          <header onKeyDown={event => this.handleArrow(event)} className="App-header">
+            {icons ? icons.map(icon => (
+            <McChooseHero handleArrow={this.handleArrow} key={icon.id} icon={icon} />
+          )) : ''}
+          </header>
+        <div className="for_decoration"></div>
+        {
+          isOpen 
+          ? <McVsScreen />
+          : ''
+        }
+      </div>
+      <Footer />
+    </>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  icons: state.icons_heros,
+  isOpen: state.isOpen,
+});
+
+const mapDispatchToProps = dispatch => ({
+  loadTodos: () => dispatch(startLoading()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(App);
