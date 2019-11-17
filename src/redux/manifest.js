@@ -10,7 +10,7 @@ const icons =  [
       "id": 0,
     },
     {
-      "src": "http://pluspng.com/img-png/mortal-kombat-hd-png-mortal-kombat-x-free-png-image-png-image-200.png",
+      "src": "https://cdn.imgbin.com/0/24/10/imgbin-mortal-kombat-x-baraka-smoke-mortal-kombat-ii-mortal-kombat-4hMnRZtjxD68VbTJVbyWkM1uU.jpg",
       "type": "img/mortal_snack.svg",
       "sizes": "512x512",
       "id": 1,

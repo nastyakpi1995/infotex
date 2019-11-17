@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './McVsScreen.css';
-import BoxIcon from './BoxIcon';
-
 import * as actions from '../redux/store';
 
-class McVsScreen extends React.Component {
+class BoxIcon extends React.Component {
+ oneRef = React.createRef();
+ componentDidMount() {
+  this.oneRef.current.focus();
+}
   handleKey = (event, id) => {
     if (event.keyCode === 81 && id === 1) {
       const { chooseIconQ } =  this.props;
@@ -35,42 +37,46 @@ class McVsScreen extends React.Component {
   getRef = (node) => { this.el = node };
 
   render() {
-    const { imgFull, Iconq, Iconw, Icone, Iconr, Icont, Icony } = this.props;
+    const { Iconq, Iconw, Icone, Iconr, Icont, Icony } = this.props;
 
     return (
-    <>
-      <div className="mc__VsScreen_box">
-        <div className="mc__VsScreen_wall">
-          <img className="mc__VsScreen__img-right" alt="" src="img/metal.jpg" />
-        </div>
-        <img className="mortal-Combat_logo-right" alt="" src="img/mortal_snack.svg" />
-        <div className="mortal-Combat_container"> 
-        <div className="mortal-Combat_picture">
-          <img 
-            className="mortal-Combat"
-            alt=""
-            src={imgFull ? imgFull : "https://img.utdstc.com/icons/mortal-kombat-x-android.png:s"}
-          />
-        </div>
-        <div className="mortal-Combat_main">
-          <h2>Battle 1</h2>
-          <img className="mortal-Combat_logo-vs" alt="" src="img/vs.svg" />
-          <BoxIcon />
-        </div>
-        <div className="mortal-Combat_picture">
-          <img
-            alt=""
-            className="mortal-Combat"
-            src={imgFull ? imgFull : "https://img.utdstc.com/icons/mortal-kombat-x-android.png:s"} 
-          />
-        </div>
+          <div className="" onKeyDown={event => console.log("Div keydown")}>
+            <button  
+              ref={this.oneRef} 
+              tabIndex={0}
+            >
+              <Iconq />
+            </button>
+            <button
+              tabIndex={1}
+              autofocus  
+              // onKeyDown={event => this.handleKey(event, 2)}
+            >
+            
+              <Iconw />
+            </button>
+            <button  
+               tabIndex={2}
+              // onKeyDown={event => this.handleKey(event, 3)}
+            >
+              <Icone />
+            </button>
+            <button  
+              // onKeyDown={event => this.handleKey(event, 4)}
+            >
+              <Iconr />
+            </button>
+            <button  
+              onKeyDown={event => this.handleKey(event, 5)}
+            >
+              <Icont />
+            </button>
+            <button  
+              onKeyDown={event => this.handleKey(event, 6)}
+            >
+              <Icony />
+            </button>
           </div>
-        <img className="mortal-Combat_logo-left" src="img/mortal_snack.svg" />
-        <div className="mc__VsScreen_wall">
-          <img className="mc__VsScreen__img-left" src="img/metal.jpg" />
-        </div>
-      </div>
-      </>
     );
   }
 }
@@ -98,4 +104,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
  mapStateToProps,
  mapDispatchToProps,
-)(McVsScreen);
+)(BoxIcon);

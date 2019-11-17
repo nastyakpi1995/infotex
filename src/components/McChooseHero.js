@@ -5,28 +5,21 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/store';
 import './McChooseHero.css';
 
-class McChooseHero extends React.Component {
-  handleArrow = (event, img) => {
-    // this.props.handleArrow(event.keyCode, img)
-    // this.props.choosePersone(event.keyCode, img);
-    // const { handleClose } =  this.props;
-    //  if (event.keyCode === 13) {
-    //     setTimeout(handleClose, 10000);
-    //  }
-  }
-  componentDidMount() {
+const McChooseHero = ({ icon, selectedPersonId, imgFull }) => {
+  const handleArrow = (event, img) => {
+    this.props.choosePersone(event.keyCode, img);
+    const { handleClose } =  this.props;
+     if (event.keyCode === 13) {
+        setTimeout(handleClose, 10000);
+     }
   }
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
   }
-
-  render() {
-  const { icon, selectedPersonId, imgFull } = this.props;
-console.log(imgFull)
     return (
       <form 
-        onSubmit={this.handleSubmit} 
+        onSubmit={handleSubmit} 
         className="form"
       >
       <div
@@ -35,7 +28,7 @@ console.log(imgFull)
         'person': true,
       })}
         tabIndex="3"
-        onKeyDown={event => this.props.handleArrow(event, icon.src )}
+        onKeyDown={event => handleArrow(event, icon.src )}
       >
       <img className="person__img_icon" alt="" src={icon.src} />
       </div>
@@ -52,7 +45,6 @@ console.log(imgFull)
       </div>
     </form>
    )
- };
 };
 
 const mapStateToProps = state => ({
@@ -70,3 +62,44 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(McChooseHero);
+
+// function App() {
+//   const firstNameRef = useRef(null);
+//   const lastNameRef = useRef(null);
+//   const submitRef = useRef(null);
+   
+//   useEffect(()=> {
+//     false ? lastNameRef.current.focus() : firstNameRef.current.focus();
+
+//   }, [])
+//   function firstkeyDown(e) {
+//     if (e.key === "Enter") {
+//       lastNameRef.current.focus()
+//     }
+//   }
+//   function lastKeyDown(e) {
+//     if (e.key === 'Enter') {
+//       submitRef.current.focus();
+//     }
+//   }
+//   return (
+//     <div className="App">
+//       <header>
+//         <input 
+//           type="text" 
+//           ref={firstNameRef} 
+//           onKeyDown={firstkeyDown} 
+//           placeholder="enter first name" 
+//         />
+//         <input 
+//           type="text" 
+//           ref={lastNameRef} 
+//           onKeyDown={lastKeyDown} 
+//           placeholder="enter last name"
+//         />
+//         <button ref={submitRef}>submit</button>
+
+//       </header>
+//     </div>
+//   )
+// }
