@@ -29,7 +29,10 @@ body {
 
 .App-header {
   display: grid;
-  justify-content: center;
+  grid-column-gap: 5px;
+  grid-row-gap: 3px;
+  align-self: center;
+  text-align: end;
   grid-template-columns: repeat(7, 50px);
 }
 

@@ -4,10 +4,6 @@ import './McVsScreen.css';
 import * as actions from '../redux/store';
 
 class BoxIcon extends React.Component {
- oneRef = React.createRef();
- componentDidMount() {
-  this.oneRef.current.focus();
-}
   handleKey = (event, id) => {
     if (event.keyCode === 81 && id === 1) {
       const { chooseIconQ } =  this.props;
@@ -42,27 +38,28 @@ class BoxIcon extends React.Component {
     return (
           <div className="" onKeyDown={event => console.log("Div keydown")}>
             <button  
-              ref={this.oneRef} 
-              tabIndex={0}
+              // ref={this.oneRef} 
+              onKeyDown={event => this.handleKey(event, 1)}
+              // tabIndex={0}
             >
               <Iconq />
             </button>
             <button
-              tabIndex={1}
+              // tabIndex={1}
               autofocus  
-              // onKeyDown={event => this.handleKey(event, 2)}
+              onKeyDown={event => this.handleKey(event, 2)}
             >
             
               <Iconw />
             </button>
             <button  
-               tabIndex={2}
-              // onKeyDown={event => this.handleKey(event, 3)}
+              //  tabIndex={2}
+              onKeyDown={event => this.handleKey(event, 3)}
             >
               <Icone />
             </button>
             <button  
-              // onKeyDown={event => this.handleKey(event, 4)}
+              onKeyDown={event => this.handleKey(event, 4)}
             >
               <Iconr />
             </button>

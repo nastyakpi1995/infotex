@@ -10,6 +10,7 @@
   content: "1";
   position: absolute;
   top: 0;
+  left: 50%;
   transform: rotate(18deg);
   color: rgb(244, 246, 216);
   font-family: 'Roboto', sans-serif;
@@ -26,7 +27,7 @@
 .person__img img {
   height: 100%;
   width: 100%;
-  object-fit: none;
+  object-fit: initial;
 }
 
 .person__img__hidden {

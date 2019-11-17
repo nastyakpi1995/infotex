@@ -1,14 +1,13 @@
-
 import React from 'react';
 import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
 import * as actions from '../redux/store';
 import './McChooseHero.css';
 
-const McChooseHero = ({ icon, selectedPersonId, imgFull }) => {
+const McChooseHero = ({ icon, selectedPersonId, imgFull, choosePersone, handleClose }) => {
   const handleArrow = (event, img) => {
-    this.props.choosePersone(event.keyCode, img);
-    const { handleClose } =  this.props;
+    
+    choosePersone(event.keyCode, img);
      if (event.keyCode === 13) {
         setTimeout(handleClose, 10000);
      }
@@ -22,16 +21,16 @@ const McChooseHero = ({ icon, selectedPersonId, imgFull }) => {
         onSubmit={handleSubmit} 
         className="form"
       >
-      <div
+      <button
         className={classNames({
         'PeopleTable__row--selected': selectedPersonId === icon.id,
         'person': true,
       })}
         tabIndex="3"
-        onKeyDown={event => handleArrow(event, icon.src )}
+        onKeyDown={event => handleArrow(event, icon.type )}
       >
       <img className="person__img_icon" alt="" src={icon.src} />
-      </div>
+      </button>
       <div  
 
         className={classNames({

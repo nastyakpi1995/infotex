@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './McVsScreen.css';
 import BoxIcon from './BoxIcon';
-
 import * as actions from '../redux/store';
 
 class McVsScreen extends React.Component {
