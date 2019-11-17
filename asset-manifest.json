@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/infotex/static/css/main.9c933cd1.chunk.css",
-    "main.js": "/infotex/static/js/main.134e186a.chunk.js",
-    "main.js.map": "/infotex/static/js/main.134e186a.chunk.js.map",
+    "main.css": "/infotex/static/css/main.eb71a943.chunk.css",
+    "main.js": "/infotex/static/js/main.734735ce.chunk.js",
+    "main.js.map": "/infotex/static/js/main.734735ce.chunk.js.map",
     "runtime-main.js": "/infotex/static/js/runtime-main.693ae6c2.js",
     "runtime-main.js.map": "/infotex/static/js/runtime-main.693ae6c2.js.map",
-    "static/js/2.94357061.chunk.js": "/infotex/static/js/2.94357061.chunk.js",
-    "static/js/2.94357061.chunk.js.map": "/infotex/static/js/2.94357061.chunk.js.map",
+    "static/js/2.5ed26e0d.chunk.js": "/infotex/static/js/2.5ed26e0d.chunk.js",
+    "static/js/2.5ed26e0d.chunk.js.map": "/infotex/static/js/2.5ed26e0d.chunk.js.map",
     "index.html": "/infotex/index.html",
-    "precache-manifest.53a3fbc131ae3488732fda1ee2fb3459.js": "/infotex/precache-manifest.53a3fbc131ae3488732fda1ee2fb3459.js",
+    "precache-manifest.49b59c2c8dcf20b9bfb12f817cd1d4a0.js": "/infotex/precache-manifest.49b59c2c8dcf20b9bfb12f817cd1d4a0.js",
     "service-worker.js": "/infotex/service-worker.js",
-    "static/css/main.9c933cd1.chunk.css.map": "/infotex/static/css/main.9c933cd1.chunk.css.map"
+    "static/css/main.eb71a943.chunk.css.map": "/infotex/static/css/main.eb71a943.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.693ae6c2.js",
-    "static/js/2.94357061.chunk.js",
-    "static/css/main.9c933cd1.chunk.css",
-    "static/js/main.134e186a.chunk.js"
+    "static/js/2.5ed26e0d.chunk.js",
+    "static/css/main.eb71a943.chunk.css",
+    "static/js/main.734735ce.chunk.js"
   ]
 }
