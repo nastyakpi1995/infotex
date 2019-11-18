@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5c3ae7cf1d4ff13d66e92cc6a790bbe4",
+    "revision": "e3f2d0da5f70e05b63f442bc229d426c",
     "url": "/infotex/index.html"
   },
   {
-    "revision": "a2ebfc6c78137cbff5bc",
+    "revision": "1857c1d512beeb112600",
     "url": "/infotex/static/css/main.eb71a943.chunk.css"
   },
   {
-    "revision": "961896507af581102ebd",
-    "url": "/infotex/static/js/2.5ed26e0d.chunk.js"
+    "revision": "9eb82bd39a047e15b034",
+    "url": "/infotex/static/js/2.98baf2df.chunk.js"
   },
   {
-    "revision": "a2ebfc6c78137cbff5bc",
-    "url": "/infotex/static/js/main.734735ce.chunk.js"
+    "revision": "1857c1d512beeb112600",
+    "url": "/infotex/static/js/main.9019dcf4.chunk.js"
   },
   {
     "revision": "ab46e0714d12fcec1680",
