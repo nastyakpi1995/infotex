@@ -6,7 +6,6 @@ import './McChooseHero.css';
 
 const McChooseHero = ({ icon, selectedPersonId, imgFull, choosePersone, handleClose }) => {
   const handleArrow = (event, img) => {
-    
     choosePersone(event.keyCode, img);
      if (event.keyCode === 13) {
         setTimeout(handleClose, 10000);

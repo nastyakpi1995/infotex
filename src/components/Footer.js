@@ -1,12 +1,9 @@
 import React from 'react';
 
-export default class Footer extends React.Component {
-  render() {
+const Footer = () => (
+  <footer className="footer">
+    <img src="" alt="" />
+  </footer>
+);
 
-    return (
-        <footer className="footer">
-        <img src="" alt="" />
-      </footer>
-    );
-  }
-}
+export default Footer;
