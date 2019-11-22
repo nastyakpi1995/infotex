@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/infotex/static/css/main.bf127ace.chunk.css",
-    "main.js": "/infotex/static/js/main.b276796b.chunk.js",
-    "main.js.map": "/infotex/static/js/main.b276796b.chunk.js.map",
+    "main.js": "/infotex/static/js/main.d22b4664.chunk.js",
+    "main.js.map": "/infotex/static/js/main.d22b4664.chunk.js.map",
     "runtime-main.js": "/infotex/static/js/runtime-main.693ae6c2.js",
     "runtime-main.js.map": "/infotex/static/js/runtime-main.693ae6c2.js.map",
-    "static/js/2.edf9eca3.chunk.js": "/infotex/static/js/2.edf9eca3.chunk.js",
-    "static/js/2.edf9eca3.chunk.js.map": "/infotex/static/js/2.edf9eca3.chunk.js.map",
+    "static/js/2.3bc56595.chunk.js": "/infotex/static/js/2.3bc56595.chunk.js",
+    "static/js/2.3bc56595.chunk.js.map": "/infotex/static/js/2.3bc56595.chunk.js.map",
     "index.html": "/infotex/index.html",
-    "precache-manifest.465455fe9e041c6cada8fccae859c4fb.js": "/infotex/precache-manifest.465455fe9e041c6cada8fccae859c4fb.js",
+    "precache-manifest.94f0b9f0248585c10602a5888c76f939.js": "/infotex/precache-manifest.94f0b9f0248585c10602a5888c76f939.js",
     "service-worker.js": "/infotex/service-worker.js",
     "static/css/main.bf127ace.chunk.css.map": "/infotex/static/css/main.bf127ace.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.693ae6c2.js",
-    "static/js/2.edf9eca3.chunk.js",
+    "static/js/2.3bc56595.chunk.js",
     "static/css/main.bf127ace.chunk.css",
-    "static/js/main.b276796b.chunk.js"
+    "static/js/main.d22b4664.chunk.js"
   ]
 }
