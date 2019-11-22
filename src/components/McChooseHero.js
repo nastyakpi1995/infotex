@@ -4,20 +4,27 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/store';
 import './McChooseHero.css';
 
-const McChooseHero = ({ icon, selectedPersonId, imgFull, choosePersone, handleClose }) => {
-  const handleArrow = (event, img) => {
+class McChooseHero extends React.Component {
+  handleArrow = (event, img) => {
+    const { choosePersone, startAnim, handleClose } = this.props;
     choosePersone(event.keyCode, img);
      if (event.keyCode === 13) {
+      setTimeout(startAnim, 3000);
         setTimeout(handleClose, 10000);
      }
   }
+  componentDidMount() {
+    window.onkeydown = (event) => this.handleArrow(event)
+  }
 
-  const handleSubmit = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
   }
+  render() {
+  const { icon, selectedPersonId, imgFull } = this.props;
     return (
       <form 
-        onSubmit={handleSubmit} 
+        onSubmit={this.handleSubmit} 
         className="form"
       >
       <button
@@ -25,13 +32,11 @@ const McChooseHero = ({ icon, selectedPersonId, imgFull, choosePersone, handleCl
         'PeopleTable__row--selected': selectedPersonId === icon.id,
         'person': true,
       })}
-        tabIndex="3"
-        onKeyDown={event => handleArrow(event, icon.type )}
+        onKeyDown={event => this.handleArrow(event, icon.type )}
       >
       <img className="person__img_icon" alt="" src={icon.src} />
       </button>
       <div  
-
         className={classNames({
         'person__img': icon.id === 13,
         'person__img__hidden': icon.id !== 13,
@@ -39,65 +44,25 @@ const McChooseHero = ({ icon, selectedPersonId, imgFull, choosePersone, handleCl
       >
       <img
         alt=""
-        src={imgFull ? imgFull : ""} />
+        src={imgFull ? imgFull : 'img/hero--1.svg'} />
       </div>
     </form>
    )
 };
+}
 
 const mapStateToProps = state => ({
   selectedPersonId: state.selectedPersonId,
   imgFull: state.src,
-  isOpen: state.isOpen,
 });
 
 const mapDispatchToProps = dispatch => ({
   choosePersone: (event, img) => dispatch(actions.choosePersone(event, img)),
-  handleClose: () => dispatch(actions.handleClose())
+  handleClose: () => dispatch(actions.handleClose()),
+  startAnim: () => dispatch(actions.startAnim()),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(McChooseHero);
-
-// function App() {
-//   const firstNameRef = useRef(null);
-//   const lastNameRef = useRef(null);
-//   const submitRef = useRef(null);
-   
-//   useEffect(()=> {
-//     false ? lastNameRef.current.focus() : firstNameRef.current.focus();
-
-//   }, [])
-//   function firstkeyDown(e) {
-//     if (e.key === "Enter") {
-//       lastNameRef.current.focus()
-//     }
-//   }
-//   function lastKeyDown(e) {
-//     if (e.key === 'Enter') {
-//       submitRef.current.focus();
-//     }
-//   }
-//   return (
-//     <div className="App">
-//       <header>
-//         <input 
-//           type="text" 
-//           ref={firstNameRef} 
-//           onKeyDown={firstkeyDown} 
-//           placeholder="enter first name" 
-//         />
-//         <input 
-//           type="text" 
-//           ref={lastNameRef} 
-//           onKeyDown={lastKeyDown} 
-//           placeholder="enter last name"
-//         />
-//         <button ref={submitRef}>submit</button>
-
-//       </header>
-//     </div>
-//   )
-// }

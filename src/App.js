@@ -13,7 +13,6 @@ class App extends React.Component {
 
   render() {
     const { isOpen } = this.props;
-
     return (
       <>
         <div className="App">
@@ -21,8 +20,8 @@ class App extends React.Component {
          <Header />
         <div className="for_decoration"></div>
         {
-          isOpen 
-          ? <McVsScreen />
+          isOpen
+          ? <McVsScreen /> 
           : ''
         }
       </div>

@@ -4,31 +4,37 @@ import './McVsScreen.css';
 import * as actions from '../redux/store';
 
 class BoxIcon extends React.Component {
-  handleKey = (event, id) => {
-    if (event.keyCode === 81 && id === 1) {
+  handleKey = (event) => {
+    if (event.keyCode === 81) {
       const { chooseIconQ } =  this.props;
       chooseIconQ();
     }
-    if (event.keyCode === 87 && id === 2) {
+    if (event.keyCode === 87) {
       const { chooseIconW } =  this.props;
       chooseIconW();
     }
-    if (event.keyCode === 69 && id === 3) {
+    if (event.keyCode === 69) {
       const { chooseIconE } =  this.props;
       chooseIconE();
     }
-    if (event.keyCode === 82 && id === 4) {
+    if (event.keyCode === 82) {
       const { chooseIconR } =  this.props;
       chooseIconR();
     }
-    if (event.keyCode === 84 && id === 5) {
+    if (event.keyCode === 84) {
       const { chooseIconT } =  this.props;
       chooseIconT();
     }
-    if (event.keyCode === 89  && id === 6) {
+    if (event.keyCode === 89) {
       const { chooseIconY } =  this.props;
       chooseIconY();
     }
+  }
+  componentWillMount() {
+    this.props.handleclear()
+  }
+  componentDidMount() {
+    window.onkeydown = (event) => this.handleKey(event)
   }
   getRef = (node) => { this.el = node };
 
@@ -36,40 +42,35 @@ class BoxIcon extends React.Component {
     const { Iconq, Iconw, Icone, Iconr, Icont, Icony } = this.props;
 
     return (
-          <div className="" onKeyDown={event => console.log("Div keydown")}>
+          <div className="">
             <button  
-              // ref={this.oneRef} 
-              onKeyDown={event => this.handleKey(event, 1)}
-              // tabIndex={0}
+              onKeyDown={event => this.handleKey(event)}
             >
               <Iconq />
             </button>
             <button
-              // tabIndex={1}
-              autofocus  
-              onKeyDown={event => this.handleKey(event, 2)}
+              onKeyDown={event => this.handleKey(event)}
             >
             
               <Iconw />
             </button>
-            <button  
-              //  tabIndex={2}
-              onKeyDown={event => this.handleKey(event, 3)}
+            <button
+              onKeyDown={event => this.handleKey(event)}
             >
               <Icone />
             </button>
             <button  
-              onKeyDown={event => this.handleKey(event, 4)}
+              onKeyDown={event => this.handleKey(event)}
             >
               <Iconr />
             </button>
             <button  
-              onKeyDown={event => this.handleKey(event, 5)}
+              onKeyDown={event => this.handleKey(event)}
             >
               <Icont />
             </button>
             <button  
-              onKeyDown={event => this.handleKey(event, 6)}
+              onKeyDown={event => this.handleKey(event)}
             >
               <Icony />
             </button>
@@ -96,6 +97,7 @@ const mapDispatchToProps = dispatch => ({
   chooseIconR: () => dispatch(actions.chooseIconR()),
   chooseIconT: () => dispatch(actions.chooseIconT()),
   chooseIconY: () => dispatch(actions.chooseIconY()),
+  handleclear: () => dispatch(actions.handleclear()),
 });
 
 export default connect(

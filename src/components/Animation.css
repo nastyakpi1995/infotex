@@ -1,0 +1,47 @@
+
+  .mc__VsScreen_box_animation {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   z-index: 5;
+  }
+.mc__VsScreen_wall_animation {
+  width: 600px;
+}
+.mc__VsScreen_wall_animation_right {
+ width: 600px;
+ animation: animdash 3s; 
+ transition: ease;
+}
+  .mc__VsScreen__img-left_animation {
+   transform: rotate(180deg);
+   width: 100%;
+}
+.mc__VsScreen__img-right_animation {
+  width: 100%;
+}
+ 
+@keyframes animdash {
+ 0% {
+  margin-right: 0;
+ }
+ 50% {
+  margin-right: 300px;
+ }
+ 100% {
+  margin-right: 640px;
+ }
+}
+@keyframes animdashg {
+ 0% {
+  margin-left: 0;
+ }
+ 50% {
+  margin-left: 300px;
+ }
+ 100% {
+  margin-left: 640px;
+ }
+}
+

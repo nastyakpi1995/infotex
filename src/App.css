@@ -39,7 +39,7 @@ body {
 .App-header form:nth-child(11) {
   grid-column-start: 4;
   grid-column-end: 6;
-  padding-left: 50px;
+  padding-left: 55px;
   position: left;
   background: no-repeat;
   background-size: 50px;

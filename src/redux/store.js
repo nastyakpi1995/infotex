@@ -15,12 +15,16 @@ const CHOOSE_ICONE = 'CHOOSE_ICONE';
 const CHOOSE_ICONR = 'CHOOSE_ICONR';
 const CHOOSE_ICONT = 'CHOOSE_ICONT';
 const CHOOSE_ICONY = 'CHOOSE_ICONY';
+const ANIMATION = 'ANIMATION';
+const CLEAR = 'CLEAR';
 
 const initialState = {
   icons_heros: null,
   selectedPersonId: 0,
+  selectedPerson: [],
   src: "",
   isOpen: false,
+  isAnimat: false,
   indexQ: 0,
   chooseIconQ: CategoryIcon,
   icons: [CategoryIcon, BookIcon, ChromeReaderModeIcon, CasinoIcon, AirplanemodeActiveIcon],
@@ -45,9 +49,65 @@ export const chooseIconE = () => ({ type: CHOOSE_ICONE });
 export const chooseIconR = () => ({ type: CHOOSE_ICONR });
 export const chooseIconT = () => ({ type: CHOOSE_ICONT });
 export const chooseIconY = () => ({ type: CHOOSE_ICONY });
+export const startAnim = () => ({ type: ANIMATION });
+export const handleclear = () => ({ type: CLEAR });
+
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case CHOOSE_ICON:
+      return {
+        ...state,
+        chooseIconQ: state.icons[state.indexQ],
+        indexQ: state.indexQ < 4 ? state.indexQ + 1 : 0,
+      }
+      case CLEAR:
+        return {
+          ...state,
+          indexQ: 0,
+          chooseIconQ: CategoryIcon,
+          indexW: 0,
+          chooseIconW: CategoryIcon,
+          indexE: 0,
+          chooseIconE: CategoryIcon,
+          indexR: 0,
+          chooseIconR: CategoryIcon,
+          indexT: 0,
+          chooseIconT: CategoryIcon,
+          indexY: 0,
+          chooseIconY: CategoryIcon,
+        }
+      
+    case CHOOSE_ICONW:
+      return {
+        ...state,
+        chooseIconW: state.icons[state.indexW + 1],
+        indexW: state.indexW < 3 ? state.indexW + 1 : -1,
+      }  
+      case CHOOSE_ICONE:
+        return {
+          ...state,
+          chooseIconE: state.icons[state.indexE + 1],
+          indexE: state.indexE < 3 ? state.indexE + 1 : -1,
+        }
+      case CHOOSE_ICONR:
+        return {
+          ...state,
+          chooseIconR: state.icons[state.indexR + 1],
+          indexR: state.indexR < 3 ? state.indexR + 1 : -1,
+        }  
+      case CHOOSE_ICONT:
+        return {
+          ...state,
+          chooseIconT: state.icons[state.indexT + 1],
+          indexT: state.indexT < 3 ? state.indexT + 1 : -1,
+        }
+      case CHOOSE_ICONY:
+        return {
+          ...state,
+          chooseIconY: state.icons[state.indexY + 1],
+          indexY: state.indexY < 3 ? state.indexY + 1 : -1,
+        }   
     case START_LOADING:
       return {
         ...state,
@@ -57,14 +117,20 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isOpen: false,
+
       }  
+      case ANIMATION:
+        return {
+          ...state,
+          isAnimat: false,
+        }    
     case CHOOSE_PERSONE:
         if (action.event === 13) {
             return {
               ...state,
               isOpen: true,
+              isAnimat: true, 
             }
-         
         }
        if (action.event === 37) {
         if (state.selectedPersonId === 14) {
@@ -248,43 +314,6 @@ const reducer = (state = initialState, action) => {
           src: action.img,
         }
       } 
-      case CHOOSE_ICON:
-        return {
-          ...state,
-          chooseIconQ: state.icons[state.indexQ + 1],
-          indexQ: state.indexQ < 3 ? state.indexQ + 1 : -1,
-        }
-        
-      case CHOOSE_ICONW:
-        return {
-          ...state,
-          chooseIconW: state.icons[state.indexW + 1],
-          indexW: state.indexW < 3 ? state.indexW + 1 : -1,
-        }  
-        case CHOOSE_ICONE:
-          return {
-            ...state,
-            chooseIconE: state.icons[state.indexE + 1],
-            indexE: state.indexE < 3 ? state.indexE + 1 : -1,
-          }
-        case CHOOSE_ICONR:
-          return {
-            ...state,
-            chooseIconR: state.icons[state.indexR + 1],
-            indexR: state.indexR < 3 ? state.indexR + 1 : -1,
-          }  
-        case CHOOSE_ICONT:
-          return {
-            ...state,
-            chooseIconT: state.icons[state.indexT + 1],
-            indexT: state.indexT < 3 ? state.indexT + 1 : -1,
-          }
-        case CHOOSE_ICONY:
-          return {
-            ...state,
-            chooseIconY: state.icons[state.indexY + 1],
-            indexY: state.indexY < 3 ? state.indexY + 1 : -1,
-          }       
 
       default:
         return state;
